@@ -3,10 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/action_setting"
+        android:icon="@drawable/ic_directions_railway_black_24dp"
         android:title="@string/menu_action_setting"
-        app:showAsAction="always" />
+        app:showAsAction="ifRoom|withText" />
     <item
         android:id="@+id/action_about_us"
+        android:icon="@drawable/ic_directions_railway_black_24dp"
         android:title="@string/menu_action_about"
-        app:showAsAction="never" />
+        app:showAsAction="never|withText" />
 </menu>

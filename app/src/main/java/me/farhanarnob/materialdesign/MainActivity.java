@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     // menu item click option has been added here.
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
         switch (item.getItemId()) {
             case R.id.action_about_us:
                 Toast.makeText(MainActivity.this, "You have been clicked about us", Toast.LENGTH_SHORT).show();
