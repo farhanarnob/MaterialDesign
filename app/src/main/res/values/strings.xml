@@ -4,4 +4,6 @@
     <string name="menu_action_about">About us</string>
     <string name="button">Button</string>
     <string name="checkbox">CheckBox</string>
+    <string name="airplane">airplane</string>
+    <string name="settings">Settings</string>
 </resources>

@@ -3,7 +3,6 @@ package me.farhanarnob.materialdesign;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -19,9 +18,7 @@ public class MainActivity extends AppCompatActivity {
         Button button = (Button) findViewById(R.id.button);
         button.setBackgroundColor(Color.RED);
 
-        // Adding supportActionBar
-        Toolbar toolbar = (Toolbar) findViewById(R.id.main_toolbar);
-        setSupportActionBar(toolbar);
+
     }
 
     //giving menu into the toolbar
