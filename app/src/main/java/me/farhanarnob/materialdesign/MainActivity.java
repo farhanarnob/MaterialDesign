@@ -12,12 +12,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class MainActivity extends AppCompatActivity {
-    List<String> country;
-    ArrayAdapter<String> arrayAdapter;
+    //List<String> country;
+    ArrayAdapter<CharSequence> arrayAdapter;
     private AppCompatSpinner appCompatSpinner;
 
     @Override
@@ -28,8 +25,9 @@ public class MainActivity extends AppCompatActivity {
         button.setBackgroundColor(Color.RED);
 
         // initializing
-        countryListInitializingAndAddSomeValue();
-        arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, country);
+        //countryListInitializingAndAddSomeValue();
+        // using array from xml file
+        arrayAdapter = ArrayAdapter.createFromResource(this, R.array.country_list, android.R.layout.simple_dropdown_item_1line);
         appCompatSpinner = (AppCompatSpinner) findViewById(R.id.spinner_toolbar);
 
 
@@ -45,13 +43,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void countryListInitializingAndAddSomeValue() {
-        country = new ArrayList<>();
-        country.add("Bangladesh");
-        country.add("India");
-        country.add("Bhutan");
-        country.add("Maldip");
-    }
+//    private void countryListInitializingAndAddSomeValue() {
+//        country = new ArrayList<>();
+//        country.add("Bangladesh");
+//        country.add("India");
+//        country.add("Bhutan");
+//        country.add("Maldip");
+//    }
 
     //giving menu into the toolbar
     @Override
