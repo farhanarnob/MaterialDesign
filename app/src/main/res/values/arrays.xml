@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="country_list">
+        <item>Bangladesh</item>
+        <item>India</item>
+        <item>Bhuthan</item>
+        <item>China</item>
+    </string-array>
+</resources>
