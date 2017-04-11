@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
         //giving custom toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar2);
+        toolbar.setTitle("");
         setSupportActionBar(toolbar);
 
 
