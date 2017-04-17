@@ -2,12 +2,14 @@ package me.farhanarnob.materialdesign;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatSpinner;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Toast;
@@ -15,6 +17,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     //List<String> country;
     ArrayAdapter<CharSequence> arrayAdapter;
+    FloatingActionButton fabAuto;
     private AppCompatSpinner appCompatSpinner;
 
     @Override
@@ -22,7 +25,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button button = (Button) findViewById(R.id.button);
+        fabAuto = (FloatingActionButton) findViewById(R.id.fab_main);
+        fabAuto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "Hello", Toast.LENGTH_SHORT).show();
+            }
+        });
         button.setBackgroundColor(Color.RED);
+
 
         // initializing
         //countryListInitializingAndAddSomeValue();
