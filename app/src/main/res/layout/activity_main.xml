@@ -70,8 +70,10 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_margin="8dp"
-            android:background="@android:color/darker_gray"
-            android:elevation="4dp">
+            android:background="@drawable/oval_shape_ripple"
+            android:clickable="true"
+            android:elevation="4dp"
+            android:stateListAnimator="@animator/fab_rise">
 
         </FrameLayout>
     </LinearLayout>
