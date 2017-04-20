@@ -1,5 +1,6 @@
 package me.farhanarnob.materialdesign;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -33,6 +34,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         button.setBackgroundColor(Color.RED);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, DynamicScrollView.class);
+                startActivity(intent);
+            }
+        });
 
 
         // initializing
