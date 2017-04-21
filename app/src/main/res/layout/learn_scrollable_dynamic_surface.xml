@@ -23,6 +23,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:alpha=".9"
                 android:contentDescription="@string/this_is_an_image_view_for_toolbar"
                 android:scaleType="centerCrop"
                 android:src="@drawable/toolbar_image"

@@ -37,6 +37,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
+        android:background="@drawable/oval_shape_ripple"
+        android:elevation="6dp"
+        android:minWidth="@dimen/button_width"
+        android:stateListAnimator="@animator/button_rise"
         android:text="@string/button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -74,7 +78,7 @@
             android:background="@drawable/oval_shape_ripple"
             android:clickable="true"
             android:elevation="4dp"
-            android:stateListAnimator="@animator/fab_rise">
+            android:stateListAnimator="@animator/button_rise">
 
         </FrameLayout>
     </LinearLayout>
@@ -88,9 +92,7 @@
         android:clickable="true"
         android:contentDescription="@string/fab"
         android:src="@drawable/ic_add_black_24dp"
-
-
-        android:stateListAnimator="@animator/fab_rise"
+        android:stateListAnimator="@animator/button_rise"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent" />
 
