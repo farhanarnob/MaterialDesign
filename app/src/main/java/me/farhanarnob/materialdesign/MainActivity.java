@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.fab_main)
     FloatingActionButton fabAuto;
     @BindView(R.id.spinner_toolbar)
-    private AppCompatSpinner appCompatSpinner;
+    AppCompatSpinner appCompatSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(MainActivity.this, "Hello", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, PalateFromImageLayout.class);
+                startActivity(intent);
             }
         });
 
