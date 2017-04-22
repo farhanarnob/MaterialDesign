@@ -14,18 +14,24 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Toast;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity {
     //List<String> country;
     ArrayAdapter<CharSequence> arrayAdapter;
+    @BindView(R.id.fab_main)
     FloatingActionButton fabAuto;
+    @BindView(R.id.spinner_toolbar)
     private AppCompatSpinner appCompatSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
         Button button = (Button) findViewById(R.id.button);
-        fabAuto = (FloatingActionButton) findViewById(R.id.fab_main);
+//        fabAuto = (FloatingActionButton) findViewById(R.id.fab_main);
         fabAuto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -46,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         //countryListInitializingAndAddSomeValue();
         // using array from xml file
         arrayAdapter = ArrayAdapter.createFromResource(this, R.array.country_list, android.R.layout.simple_dropdown_item_1line);
-        appCompatSpinner = (AppCompatSpinner) findViewById(R.id.spinner_toolbar);
+        //appCompatSpinner = (AppCompatSpinner) findViewById(R.id.spinner_toolbar);
 
 
         // add adapter to the spinner list

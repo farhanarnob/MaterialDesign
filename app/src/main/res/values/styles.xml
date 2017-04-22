@@ -5,7 +5,8 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/orange_500</item>
         <item name="colorPrimaryDark">@color/orange_700</item>
-        <item name="colorAccent">@color/light_green_a200</item>
+        <item name="colorAccent">@color/deep_orange_a200</item>
+        <!--<item name="android:statusBarColor">@android:color/transparent</item>-->
     </style>
 
     <style name="textAppear" parent="@android:style/TextAppearance">
