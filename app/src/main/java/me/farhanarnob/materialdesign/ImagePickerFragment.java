@@ -3,6 +3,7 @@ package me.farhanarnob.materialdesign;
 import android.app.Activity;
 import android.app.DialogFragment;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
@@ -23,6 +24,7 @@ import butterknife.OnClick;
 public class ImagePickerFragment extends DialogFragment {
     private static final String TAG = ImagePickerFragment.class.getName();
     private static final int REQUEST_IMAGE_CAPTURE = 101;
+    private static final int REQUEST_IMAGE_PICK = 100;
     @BindView(R.id.picker_button)
     Button pickerButton;
     @BindView(R.id.taking_button)
@@ -46,6 +48,13 @@ public class ImagePickerFragment extends DialogFragment {
         }
     }
 
+    @OnClick(R.id.picker_button)
+    void pickImage(View view) {
+        Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
+        photoPickerIntent.setType("image/*");
+        startActivityForResult(photoPickerIntent, REQUEST_IMAGE_PICK);
+    }
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -54,7 +63,14 @@ public class ImagePickerFragment extends DialogFragment {
                 if (resultCode == Activity.RESULT_OK) {
                     Log.i("REQUEST", "SUCCESSFUL");
                     Bundle imageFromCamera = data.getExtras();
-                    ((PalateFromImageLayout) getActivity()).createPalette(imageFromCamera);
+                    ((PalateFromImageLayout) getActivity()).loadForPalette(imageFromCamera);
+                    getDialog().dismiss();
+                }
+                break;
+            case REQUEST_IMAGE_PICK:
+                if (resultCode == Activity.RESULT_OK) {
+                    Uri selectImage = data.getData();
+                    ((PalateFromImageLayout) getActivity()).loadForPalette(selectImage);
                     getDialog().dismiss();
                 }
                 break;

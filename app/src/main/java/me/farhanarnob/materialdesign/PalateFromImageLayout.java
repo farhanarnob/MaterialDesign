@@ -3,6 +3,8 @@ package me.farhanarnob.materialdesign;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
@@ -11,6 +13,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+
+import com.squareup.picasso.Picasso;
+
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -41,10 +48,26 @@ public class PalateFromImageLayout extends AppCompatActivity {
         ft.commit();
     }
 
-    public void createPalette(Bundle imageBundle) {
+    // from Bundle
+    public void loadForPalette(Bundle imageBundle) {
         Log.i("LOAD", imageBundle.toString());
         ImageView imageView = (ImageView) findViewById(R.id.app_bar_image);
         Bitmap imageBitmap = (Bitmap) imageBundle.get("data");
         imageView.setImageBitmap(imageBitmap);
     }
+
+    // from URI
+    public void loadForPalette(Uri imageUri) {
+        Log.i("LOAD", imageUri.toString());
+        ImageView imageView = (ImageView) findViewById(R.id.app_bar_image);
+        Picasso.with(this).load(imageUri).into(imageView);
+        try {
+            InputStream inputStream = getContentResolver().openInputStream(imageUri);
+            Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+    }
+
 }
