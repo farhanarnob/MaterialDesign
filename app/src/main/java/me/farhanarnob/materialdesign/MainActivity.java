@@ -1,11 +1,9 @@
 package me.farhanarnob.materialdesign;
 
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatSpinner;
 import android.support.v7.widget.Toolbar;
@@ -15,7 +13,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -85,13 +86,9 @@ public class MainActivity extends AppCompatActivity {
     // showing fragment
     @OnClick(R.id.fab_main)
     public void click(View view) {
-        Snackbar.make(findViewById(R.id.linearLayout), R.string.button, Snackbar.LENGTH_LONG).show();
+        Intent intent = new Intent(MainActivity.this, PalateFromImageLayout.class);
+        startActivity(intent);
 
-        FragmentManager fm = getFragmentManager();
-        FragmentTransaction ft = fm.beginTransaction();
-        ImagePickerFragment imagePickerFragment = new ImagePickerFragment();
-        imagePickerFragment.show(fm, "dialog");
-        ft.commit();
     }
 
     //giving menu into the toolbar
@@ -115,5 +112,10 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
         return true;
+    }
+
+    public void createPalette(Uri imageUri) {
+        ImageView imageView = (ImageView) findViewById(R.id.app_bar_image);
+        Picasso.with(this).load(imageUri).into(imageView);
     }
 }
