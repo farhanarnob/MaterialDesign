@@ -1,8 +1,11 @@
 package me.farhanarnob.materialdesign;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatSpinner;
 import android.support.v7.widget.Toolbar;
@@ -16,6 +19,7 @@ import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
     //List<String> country;
@@ -32,14 +36,14 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         Button button = (Button) findViewById(R.id.button);
 //        fabAuto = (FloatingActionButton) findViewById(R.id.fab_main);
-        fabAuto.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "Hello", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(MainActivity.this, PalateFromImageLayout.class);
-                startActivity(intent);
-            }
-        });
+//        fabAuto.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Toast.makeText(MainActivity.this, "Hello", Toast.LENGTH_SHORT).show();
+//                Intent intent = new Intent(MainActivity.this, PalateFromImageLayout.class);
+//                startActivity(intent);
+//            }
+//        });
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,6 +81,18 @@ public class MainActivity extends AppCompatActivity {
 //        country.add("Bhutan");
 //        country.add("Maldip");
 //    }
+
+    // showing fragment
+    @OnClick(R.id.fab_main)
+    public void click(View view) {
+        Snackbar.make(findViewById(R.id.linearLayout), R.string.button, Snackbar.LENGTH_LONG).show();
+
+        FragmentManager fm = getFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        ImagePickerFragment imagePickerFragment = new ImagePickerFragment();
+        imagePickerFragment.show(fm, "dialog");
+        ft.commit();
+    }
 
     //giving menu into the toolbar
     @Override
