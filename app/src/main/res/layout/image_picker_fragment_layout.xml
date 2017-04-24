@@ -9,6 +9,7 @@
     android:paddingStart="32dp">
 
     <TextView
+        style="@android:style/TextAppearance.Material.Headline"
         android:layout_width="match_parent"
         android:layout_height="32dp"
         android:layout_margin="8dp"

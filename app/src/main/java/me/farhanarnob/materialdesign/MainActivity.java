@@ -106,6 +106,12 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    @OnClick(R.id.custom_fab)
+    public void StartExperimentalActivity(View view) {
+        Intent intent = new Intent(MainActivity.this, ExperimentActivity.class);
+        startActivity(intent);
+    }
+
     public void createPalette(Uri imageUri) {
         ImageView imageView = (ImageView) findViewById(R.id.app_bar_image);
         Picasso.with(this).load(imageUri).into(imageView);

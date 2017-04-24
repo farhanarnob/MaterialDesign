@@ -6,4 +6,5 @@
     <color name="light_green_a200">#B2FF59</color>
     <color name="teal_a200">#64FFDA</color>
     <color name="deep_orange_a200">#FF6E40</color>
+    <color name="label">@color/light_green_a200</color>
 </resources>
