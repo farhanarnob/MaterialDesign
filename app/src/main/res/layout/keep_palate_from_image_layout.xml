@@ -33,18 +33,13 @@
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
-    <android.support.v4.widget.NestedScrollView
-        android:id="@+id/nested_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior">
+    <!--<android.support.v4.widget.NestedScrollView-->
+    <!--android:id="@+id/nested_layout"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--&gt;-->
 
-        <GridView
-            android:id="@+id/gridView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:numColumns="auto_fit" />
-    </android.support.v4.widget.NestedScrollView>
+    <!--</android.support.v4.widget.NestedScrollView>-->
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/image_action_fab"
@@ -56,4 +51,12 @@
         app:fabSize="auto"
         app:layout_anchor="@id/appbar"
         app:layout_anchorGravity="bottom|right|end" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:nestedScrollingEnabled="true"
+        android:scrollbars="vertical"
+        app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior" />
 </android.support.design.widget.CoordinatorLayout>
