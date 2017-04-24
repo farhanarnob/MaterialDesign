@@ -31,7 +31,7 @@ import butterknife.OnClick;
  * Created by ${farhanarnob} on ${06-Oct-16}.
  */
 
-public class PalateFromImageLayout extends AppCompatActivity {
+public class PalateFromImageActivity extends AppCompatActivity {
     @BindView(R.id.image_action_fab)
     FloatingActionButton fab;
     @BindView(R.id.recycler_view)
@@ -44,11 +44,16 @@ public class PalateFromImageLayout extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.keep_palate_from_image_layout);
         ButterKnife.bind(this);
+        imagePicking();
     }
 
     @OnClick(R.id.image_action_fab)
     void fabAction(View view) {
-        Snackbar.make(findViewById(R.id.recycler_view), R.string.button, Snackbar.LENGTH_LONG).show();
+        imagePicking();
+    }
+
+    public void imagePicking() {
+        Snackbar.make(findViewById(R.id.recycler_view), R.string.need_an_image, Snackbar.LENGTH_LONG).show();
 
         FragmentManager fm = getFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
@@ -90,7 +95,7 @@ public class PalateFromImageLayout extends AppCompatActivity {
                 HashMap<String, Integer> swatches = processPalette(palette);
                 Object[] entries = swatches.entrySet().toArray();
                 SwatchAdapter swatchAdapter = new SwatchAdapter(entries);
-                // mLayoutManager = new LinearLayoutManager(PalateFromImageLayout.this);
+                // mLayoutManager = new LinearLayoutManager(PalateFromImageActivity.this);
                 mLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
                 recyclerView.setLayoutManager(mLayoutManager);
                 recyclerView.setAdapter(swatchAdapter);

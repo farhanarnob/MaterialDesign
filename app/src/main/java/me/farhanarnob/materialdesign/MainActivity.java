@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 //            @Override
 //            public void onClick(View view) {
 //                Toast.makeText(MainActivity.this, "Hello", Toast.LENGTH_SHORT).show();
-//                Intent intent = new Intent(MainActivity.this, PalateFromImageLayout.class);
+//                Intent intent = new Intent(MainActivity.this, PalateFromImageActivity.class);
 //                startActivity(intent);
 //            }
 //        });
@@ -75,20 +75,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-//    private void countryListInitializingAndAddSomeValue() {
-//        country = new ArrayList<>();
-//        country.add("Bangladesh");
-//        country.add("India");
-//        country.add("Bhutan");
-//        country.add("Maldip");
-//    }
 
     // showing fragment
     @OnClick(R.id.fab_main)
     public void click(View view) {
-        Intent intent = new Intent(MainActivity.this, PalateFromImageLayout.class);
+        Intent intent = new Intent(MainActivity.this, PalateFromImageActivity.class);
         startActivity(intent);
-
     }
 
     //giving menu into the toolbar

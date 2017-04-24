@@ -63,14 +63,14 @@ public class ImagePickerFragment extends DialogFragment {
                 if (resultCode == Activity.RESULT_OK) {
                     Log.i("REQUEST", "SUCCESSFUL");
                     Bundle imageFromCamera = data.getExtras();
-                    ((PalateFromImageLayout) getActivity()).loadForPalette(imageFromCamera);
+                    ((PalateFromImageActivity) getActivity()).loadForPalette(imageFromCamera);
                     getDialog().dismiss();
                 }
                 break;
             case REQUEST_IMAGE_PICK:
                 if (resultCode == Activity.RESULT_OK) {
                     Uri selectImage = data.getData();
-                    ((PalateFromImageLayout) getActivity()).loadForPalette(selectImage);
+                    ((PalateFromImageActivity) getActivity()).loadForPalette(selectImage);
                     getDialog().dismiss();
                 }
                 break;
