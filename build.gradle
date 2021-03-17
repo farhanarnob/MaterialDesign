@@ -6,11 +6,7 @@ buildscript {
         google()
     }
     dependencies {
-<<<<<<< HEAD
         classpath 'com.android.tools.build:gradle:4.1.2'
-=======
-        classpath 'com.android.tools.build:gradle:3.0.0'
->>>>>>> a299059... Merge pull request #17 from farhanarnob/Add_scrim_to_the_toolbar
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
